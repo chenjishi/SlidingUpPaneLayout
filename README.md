@@ -6,10 +6,7 @@ SlidingUpPaneLayout provides a vertical, multi-pane layout for use at the top le
 top view is slidable, and bottom view is fixed.
 
 ##ScreenShot
-![Alt text](slideup1.png)&nbsp;
-![Alt text](slideup2.png)&nbsp;
-![Alt text](slideup3.png)
-
+![Alt text](screenshot.gif)&nbsp;
 
 ##LICENSE
 
