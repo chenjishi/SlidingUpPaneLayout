@@ -64,6 +64,8 @@ public class SlidingUpPaneLayout extends ViewGroup {
      */
     private Drawable mShadowDrawableTop;
 
+    private float mEdgeSize;
+
     /**
      * The size of the overhang in pixels.
      * This is the minimum section of the sliding panel that will
@@ -263,6 +265,10 @@ public class SlidingUpPaneLayout extends ViewGroup {
         }
     }
 
+    public void setEdgeSize(int offset) {
+        mEdgeSize = offset;
+    }
+
     void setAllChildrenVisible() {
         for (int i = 0, childCount = getChildCount(); i < childCount; i++) {
             final View child = getChildAt(i);
@@ -381,7 +387,6 @@ public class SlidingUpPaneLayout extends ViewGroup {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
@@ -729,6 +734,12 @@ public class SlidingUpPaneLayout extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (mEdgeSize > 0) {
+            if (!isOpen() && event.getAction() == MotionEvent.ACTION_DOWN && event.getY() > mOverhangSize) {
+                return false;
+            }
+        }
+
         if (!mCanSlide) return super.onTouchEvent(event);
 
         mDragHelper.processTouchEvent(event);

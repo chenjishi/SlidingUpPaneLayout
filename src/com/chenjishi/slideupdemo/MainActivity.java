@@ -16,6 +16,13 @@ public class MainActivity extends Activity {
         slidingUpPaneLayout.setParallaxDistance((int) (200 * density));
         slidingUpPaneLayout.setShadowResourceTop(R.drawable.shadow_top);
 
+        /**
+         * limit scroll zone to 32dp, if you want whole view can scroll
+         * just ignore this method, don't call it
+         */
+//        slidingUpPaneLayout.setEdgeSize((int) (density * 32));
+
         slidingUpPaneLayout.openPane();
+
     }
 }
