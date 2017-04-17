@@ -5,12 +5,12 @@ SlidingUpPaneLayout provides a vertical, multi-pane layout for use at the top le
 
 top view is slidable, and bottom view is fixed.
 
-##ScreenShot
+## ScreenShot
 <p align="center">
   <img src="demo.gif" 
   alt="slide_up" height="400" width="240"/>
 </p>
-##LICENSE
+## LICENSE
 
 Feel Free to Use this:)
 
